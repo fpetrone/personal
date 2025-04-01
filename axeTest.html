@@ -1,0 +1,41 @@
+<html>
+ <head>
+  <script type="text/javascript">
+
+   function changeFunc() {
+    var selectBox = document.getElementById("selectBox");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+	if (selectedValue !="")
+   	window.open(selectedValue, '_blank')
+   }
+
+  </script>
+ </head>
+ <body>
+<hr>
+<label  for="selectBox">Select a search engine (opens on input in a new window)</label><br />
+  <select id="selectBox" onchange="changeFunc();">
+<option value="">Select a search engine</option>
+   <option value="https://www.google.com">Goo</option>
+   <option value="https://www.Bing.com">Bing</option>
+  </select>
+<hr>
+<style>
+	.targetMin24 {
+		width: 15px;
+		height: 15px;
+		margin:0;
+		}
+	.targetMin44 {
+		width: 26px;
+		height: 26px;
+		margin-left: -5px;
+	}
+</style>
+<button class="targetMin24" onclick="alert('hello')">A</button>
+<button class="targetMin44" onclick="alert('hello')">B</button>
+<hr>
+<a href></a>
+ </body>
+</html>

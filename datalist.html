@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test DATALIST</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        div.container{
+            margin: 5em;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Test DATALIST</h1>
+        <hr>
+        <!--<form>-->
+        <label for="names-input">Search for your DG:</label>
+        <input autocomplete="none" list="names-datalist" id="names-input" name="names-input"> 
+	      <!-- Note: this is not a valid autocomplete value but I use to avoid Chrome auto suggestions, "off" does not work-->
+            <datalist  id="names-datalist" >
+                <option data-value="1" value="COMM">
+                <option data-value="2" value="ITEC">
+                <option data-value="3" value="TRAD">
+                <option data-value="4" value="EPRS">
+                <option data-value="5" value="PERS">
+                <option data-value="6" value="PRES">
+                <option data-value="7" value="SG">
+		<option data-value="8" value="IPOL">
+		<option data-value="9" value="EXPO">
+		<option data-value="10" value="LINC">
+		<option data-value="11" value="FINS">
+		<option data-value="12" value="SAFE">
+		<option data-value="13" value="INLO">
+	</datalist>
+        <button onclick="checkData()">Search</button>
+        <!--</form>-->
+        <hr>
+	<div role="status">
+        <div id="resultDivName"></div>
+        <div id="resultDivID"></div>
+	</div>
+    <hr>
+</div>
+
+	<script src="index.js"></script>
+    <script>
+        function checkData(){
+            var name = document.getElementById("names-input").value;
+            var id = document.querySelector("#names-datalist option[value='"+name+"']").dataset.value;
+            document.getElementById("resultDivName").innerHTML=name
+            document.getElementById("resultDivID").innerHTML= id
+         }
+    </script>
+
+  </body>
+</html>
